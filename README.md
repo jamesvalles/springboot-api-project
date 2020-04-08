@@ -1,22 +1,26 @@
-Basic API application using Spring Boot
-by James Valles
 
-GET posts/
+Basic API application using Spring Boot
+=======================================
+
+by James Valles
+--------------
+
+**GET** posts/
 Returns all posts
 
-GET posts/id 
+**GET** posts/id 
 Returns specific post
 
-POST posts/ 
+**POST** posts/ 
 Adds a new post
 
-DELETE posts/id 
+**DELETE** posts/id 
 Removes specific post
 
-PUT posts/id 
+**PUT** posts/id 
 Updates post
 
-SAMPLE JSON
+>SAMPLE JSON
 
 {
 "postID": 1,
