@@ -31,17 +31,17 @@ public class PostsService {
     }
 
 
-  //CREATE post
+  //CREATE single post
   public void addPost(Post listElement){
     repo.save(listElement);
   }
 
-  //UPDATE post
+  //UPDATE specific post
   public void updatePost(Post post){
    repo.save(post);
   }
 
-  //DELETE post
+  //DELETE post by id
   public void deletePost(int id){
     repo.deleteById(id);
   }
