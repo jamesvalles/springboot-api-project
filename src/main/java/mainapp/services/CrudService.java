@@ -1,18 +1,18 @@
 package mainapp.services;
 
-import mainapp.blogentity.Post;
+import mainapp.entity.Post;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import mainapp.repository.PostRepository;
+import mainapp.repository.CrudOperationRepository;
 
 @Service
-public class PostsService {
+public class CrudService {
 
 
  @Autowired
-  private PostRepository repo;
+  private CrudOperationRepository repo;
 
 
   //GET all posts

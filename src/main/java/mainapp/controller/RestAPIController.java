@@ -1,11 +1,11 @@
 package mainapp.controller;
 
 
-import mainapp.blogentity.Post;
+import mainapp.entity.Post;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import mainapp.services.PostsService;
+import mainapp.services.CrudService;
 import java.util.List;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class PostsController{
+public class RestAPIController {
 
-  Logger logger = Logger.getLogger(PostsController.class.getName());
+  Logger logger = Logger.getLogger(RestAPIController.class.getName());
 
 
   @Autowired
-  private PostsService postsService;
+  private CrudService postsService;
 
   @RequestMapping("/posts")
   public List<Post> getPosts() {
