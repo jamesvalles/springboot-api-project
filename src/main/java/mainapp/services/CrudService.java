@@ -11,7 +11,7 @@ import mainapp.repository.CrudOperationRepository;
 public class CrudService {
 
 
- @Autowired
+  @Autowired
   private CrudOperationRepository repo;
 
 
@@ -23,26 +23,24 @@ public class CrudService {
     }
     return list;
   }
-
-
+  
   //GET single post by id
   public Post getPost(int id) {
-  return repo.findById(id).get();
-    }
-
+    return repo.findById(id).get();
+  }
 
   //CREATE single post
-  public void addPost(Post listElement){
+  public void addPost(Post listElement) {
     repo.save(listElement);
   }
 
   //UPDATE specific post
-  public void updatePost(Post post){
-   repo.save(post);
+  public void updatePost(Post post) {
+    repo.save(post);
   }
 
   //DELETE post by id
-  public void deletePost(int id){
+  public void deletePost(int id) {
     repo.deleteById(id);
   }
 }

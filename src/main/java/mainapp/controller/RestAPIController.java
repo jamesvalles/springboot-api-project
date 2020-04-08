@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
 @RestController
 public class RestAPIController {
 
@@ -24,35 +23,37 @@ public class RestAPIController {
   @Autowired
   private CrudService postsService;
 
-  @RequestMapping("/posts")
+  @RequestMapping(method = RequestMethod.GET, value = "/posts")
   public List<Post> getPosts() {
-
     logger.log(Level.INFO, "Getting posts.");
     return postsService.getPosts();
   }
 
   @RequestMapping("/posts/{id}")
   public Post getPost(@PathVariable("id") int id) {
+    logger.log(Level.INFO, "Getting specific post.");
     return postsService.getPost(id);
   }
 
 
-  @RequestMapping(method = RequestMethod.POST, value="/posts")
+  @RequestMapping(method = RequestMethod.POST, value = "/posts")
   public void addPost(@RequestBody Post listElement) {
+    logger.log(Level.INFO, "Adding post.");
     postsService.addPost(listElement);
   }
 
 
-
-  @RequestMapping(method = RequestMethod.PUT, value="/posts/{id}")
-  public void updatePost(@RequestBody Post post){
+  @RequestMapping(method = RequestMethod.PUT, value = "/posts/{id}")
+  public void updatePost(@RequestBody Post post) {
+    logger.log(Level.INFO, "Updating post.");
     postsService.updatePost(post);
 
   }
 
-  @RequestMapping(method = RequestMethod.DELETE, value="/posts/{id}")
-  public void updatePost(@PathVariable("id") int id){
-   postsService.deletePost(id);
+  @RequestMapping(method = RequestMethod.DELETE, value = "/posts/{id}")
+  public void updatePost(@PathVariable("id") int id) {
+    logger.log(Level.INFO, "Delete specific post.");
+    postsService.deletePost(id);
 
   }
 }
