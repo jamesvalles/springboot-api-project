@@ -1,10 +1,29 @@
-package blogentity;
+package mainapp.blogentity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "posts")
 
 public class Post {
+  @Id
+  @Column(name = "id")
   int postID;
-  String title;
-  String body;
 
+
+  @Column(name = "title")
+  String title;
+
+  @Column(name = "body")
+   String body;
+
+
+  public Post(){
+
+  }
   public Post(int postID, String title, String body) {
     this.postID = postID;
     this.title = title;
