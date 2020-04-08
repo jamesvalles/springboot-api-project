@@ -34,4 +34,4 @@ Updates post
 }
 
 Homepage uses Bootstrap cover template by @mdo
-Runs on MYSQL Database
+Runs on MYSQL Database as set in application.properties
